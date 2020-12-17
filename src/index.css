@@ -43,9 +43,17 @@ img {
 }
 
 .login-form input {
+  margin: 0;
+  padding: 0;
+  border: none;
   margin-bottom: 15px;
-  outline-color: bisque;
   padding: 5px 10px;
+  outline: none;
+  border-radius: 5px;
+}
+
+.login-form input:focus {
+  box-shadow: 0 0 1px 2px #fff;
 }
 
 .login-form button {
@@ -64,5 +72,5 @@ img {
 
 .login-form button:hover {
   cursor: pointer;
-  background-color: rgb(61, 61, 61, .8);
+  background-color: rgb(255, 255, 255, .4);
 }

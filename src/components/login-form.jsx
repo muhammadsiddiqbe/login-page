@@ -1,10 +1,9 @@
-import {useState, useRef} from 'react'
+import { useRef } from 'react'
 
 
 function LoginForm() {
-  const userLogin = 'Muhammad'
-  const userPassword = '571632'
-  const [] = useState(null)
+  const userLogin = 'admin'
+  const userPassword = 'parol'
 
   const takeLoginRef = useRef(null)
   const takePasswordRef = useRef(null)
@@ -25,9 +24,18 @@ function LoginForm() {
     takeLoginRef.current.value = null
     takePasswordRef.current.value = null
   }
+  const nightCheck = useRef()
+
+  function nightChecker() {
+    document.body.classList.toggle('night')
+    nightCheck.current.textContent = 'day'
+  }
+
 
   return(
     <div>
+      <input onClick={nightChecker} ref={nightCheck} className="night-check" type="checkbox" id="night-light-checkbox"/>
+      <label className="night-ligh-btn" htmlFor="night-light-checkbox">night</label>
       <h3>Sign in</h3>
       <form onSubmit={evt => evt.preventDefault()} className="login-form" action="https:echo.htmlacademy.ru" method="POST">
 
